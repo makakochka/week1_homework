@@ -13,30 +13,30 @@ def main():
 
     # Q1. 全国の平均気温を計算してください(9.5となればOK)
     sum_temperature = 0
-    for i in range(len(weather_information)):
-        sum_temperature += weather_information[i]["temperature"]
+    for info in weather_information:
+        sum_temperature += info["temperature"]
     print(sum_temperature / len(weather_information))
 
     # Q2. 大阪府のすべての駅名をカンマ区切りで出力してください( '梅田,大阪,堺' となればOK)
     stations = []
-    for i in range(len(weather_information)):
-        if weather_information[i]["prefecture"] == "大阪府":
-            stations.append(weather_information[i]["station"])
+    for info in weather_information:
+        if info["prefecture"] == "大阪府":
+            stations.append(info["station"])
     str_stations = ",".join(stations)
     print(str_stations)
 
     # # '梅田,大阪,堺,'でもOKならば次のように書ける｡
-    # for i in range(len(weather_information)):
-    #     if weather_information[i]["prefecture"] == "大阪府":
-    #         print(weather_information[i]["station"], end=",")
+    # for info in weather_information:
+    #     if info["prefecture"] == "大阪府":
+    #         print(info["station"], end=",")
     # print()
 
     # Q3. 福岡県の平均気温を計算してください(14.0となればOK)
     count = 0
     temperatures = []
-    for i in range(len(weather_information)):
-        if weather_information[i]["prefecture"] == "福岡県":
-            temperatures.append(weather_information[i]["temperature"])
+    for info in weather_information:
+        if info["prefecture"] == "福岡県":
+            temperatures.append(info["temperature"])
             count += 1
     print(sum(temperatures) / count)
 
